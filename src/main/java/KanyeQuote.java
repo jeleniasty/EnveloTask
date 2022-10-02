@@ -1,4 +1,3 @@
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -49,15 +48,11 @@ public class KanyeQuote {
 
                         if (quotesArray.isEmpty()) {
                             quotesArray.add(strQuote);
-                        } else {
-                            for (int i = 0; i < quotesArray.size(); i++) {
-                                if (strQuote.equals(quotesArray.get(i))) {
-                                    System.out.println("Kanye already said this. Type " + GREEN_BOLD + "next " + RESET + "or " + RED_BOLD + "end." + RESET);
-                                    break;
-                                }
-                            }
-                            quotesArray.add(strQuote);
+                        } else if (quotesArray.contains(strQuote)) {
+                            System.out.println("Kanye already said this. Type " + GREEN_BOLD + "next " + RESET + "or " + RED_BOLD + "end." + RESET);
+                            continue;
                         }
+                        quotesArray.add(strQuote);
 
                         System.out.println(strQuote);
                     }

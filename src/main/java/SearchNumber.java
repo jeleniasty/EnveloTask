@@ -6,11 +6,7 @@ public class SearchNumber {
 
     private boolean search (int x, int[] numbers) {
 
-        if ((binarySearch(x, numbers, 0, numbers.length-1)) != -1) {
-            return true;
-        } else {
-            return false;
-        }
+        return (binarySearch(x, numbers, 0, numbers.length - 1)) != -1;
     }
 
     private int binarySearch (int x, int [] ascendingIntArray, int start, int end) {

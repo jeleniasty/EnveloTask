@@ -44,24 +44,20 @@ public class KanyeQuote {
                         urlScanner.close();
 
                         JSONParser parser = new JSONParser();
-                        Object obj = parser.parse(String.valueOf(inf));
-                        JSONArray dataObject = new JSONArray();
-                        dataObject.add(obj);
-                        JSONObject quote = (JSONObject) dataObject.get(0);
-                        String strQuote = (String) quote.get("quote");
+                        JSONObject jsonObject = (JSONObject) parser.parse(String.valueOf(inf));
+                        String strQuote = (String) jsonObject.get("quote");
 
-//                        if (quotesArray.isEmpty()) {
-//                            quotesArray.add(strQuote);
-//                        } else {
-//                            for (int i = 0; i < quotesArray.size(); i++) {
-//                                if (strQuote.equals(quotesArray.get(i))) {
-//                                    System.out.println("Kanye already said this. Type " + GREEN_BOLD + "next " + RESET + "or " + RED_BOLD + "end." + RESET);
-//
-//                                } else {
-//                                    quotesArray.add(strQuote);
-//                                }
-//                            }
-//                        }
+                        if (quotesArray.isEmpty()) {
+                            quotesArray.add(strQuote);
+                        } else {
+                            for (int i = 0; i < quotesArray.size(); i++) {
+                                if (strQuote.equals(quotesArray.get(i))) {
+                                    System.out.println("Kanye already said this. Type " + GREEN_BOLD + "next " + RESET + "or " + RED_BOLD + "end." + RESET);
+                                    break;
+                                }
+                            }
+                            quotesArray.add(strQuote);
+                        }
 
                         System.out.println(strQuote);
                     }
@@ -75,9 +71,4 @@ public class KanyeQuote {
             }
         }
     }
-
-    public void saveQuote() {
-
-    }
-
 }

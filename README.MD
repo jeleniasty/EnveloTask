@@ -34,6 +34,10 @@
   napisania.
   private boolean search(int[] numbers, int x){}
 
+ * **Złożoność obliczeniowa algorytmu: w najgorszym przypadku -> O(log N), w najlepszym przypadku O(1)**
+
+*  **Złożoność pamięciowa algorytmu: O(logN)**
+
   **Implementacja zadania w klasie SearchNumber**
 
 **3.** Napisz program, który wykorzysta API Kanye Rest https://kanye.rest/ by każdorazowo zaproponować nową perełkę
